@@ -73,10 +73,10 @@ def translateToNumSys(number, initial_number_system=10, final_number_system=10):
     translateToNumSys(number, initial_number_system=10, final_number_system=10)
 
     Converts from one number system to another. The maximum number system is 36.
-    :param number:           number in the number system you specify.
+    :param number:                number in the number system you specify.
     :param initial_number_system: initial number system of the number. The default is 10.
     :param final_number_system:   finite number system. The default is 10.
-    :return:                 integer number converted to the specified number system.
+    :return:                      integer number converted to the specified number system.
     '''
 
 
