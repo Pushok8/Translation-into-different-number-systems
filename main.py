@@ -15,7 +15,7 @@ NUMBER_SYSTEM = [
 
 def get_convenient_encoding_form(number):
     arr = []
-    # Get the encoding code in a convenient form
+    # Get the encoding code in a convenient form.
     for i in str(number):
         arr.append(i)
     arr.reverse()
@@ -71,7 +71,6 @@ def get_binary_numsys_method(number, number_system):  # Binary numeration method
 def translateToNumSys(number, initial_number_system=10, final_number_system=10):
     '''
     translateToNumSys(number, initial_number_system=10, final_number_system=10)
-
     Converts from one number system to another. The maximum number system is 36.
     :param number:                number in the number system you specify.
     :param initial_number_system: initial number system of the number. The default is 10.
@@ -80,7 +79,7 @@ def translateToNumSys(number, initial_number_system=10, final_number_system=10):
     '''
 
 
-    # Сhecks to write the number in the correct encoding
+    # Сhecks to write the number in the correct encoding.
     for i in list(str(number)):
         if str(i).isdigit():
             assert NUMBER_SYSTEM.index(
@@ -96,10 +95,10 @@ def translateToNumSys(number, initial_number_system=10, final_number_system=10):
         return number
 
 
-    if initial_number_system != 10 and final_number_system == 10:  # Translate to decimal number system
+    if initial_number_system != 10 and final_number_system == 10:  # Translate to decimal number system.
         return get_decimal_numsys_method(number, initial_number_system)
 
-    elif initial_number_system != 10 and final_number_system != 10:  # Translate to other number system
+    elif initial_number_system != 10 and final_number_system != 10:  # Translate to other number system.
         decimalEncodingValues = get_decimal_numsys_method(number, initial_number_system)
         return get_binary_numsys_method(decimalEncodingValues, final_number_system)
 
