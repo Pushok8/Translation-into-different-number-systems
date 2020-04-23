@@ -2,6 +2,8 @@
 # Date: 31 March 2020. COVID-19, hello!)
 # Edit: 1 April 2020.
 # Has changed: add documentation, changed the location of functions.
+# Edit: 23 April 2020.
+# The function of converting to a convenient format has been removed and replaced with a more correct one.
 
 NUMBER_SYSTEM = [
     0, 1, 2, 3, 4, 5,
@@ -12,21 +14,12 @@ NUMBER_SYSTEM = [
     'U', 'V', 'W', 'X', 'Y', 'Z'
 ]
 
-
-def get_convenient_encoding_form(number):
-    arr = []
-    # Get the encoding code in a convenient form.
-    for i in str(number):
-        arr.append(i)
-    arr.reverse()
-    return arr
-
 def get_decimal_numsys_method(number, number_system):  # Decimal method.
     # The method of conversion to the decimal number system is the conversion
     # from any number system to decimal by multiplying the numbers from the end
     # of the number system which is indicated to the power starting from zero.
 
-    convenient_encoding_form = get_convenient_encoding_form(number)
+    convenient_encoding_form = str(number)[::-1]
     i = 0
     decimal_encoding = 0
 
