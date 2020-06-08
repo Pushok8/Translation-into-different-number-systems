@@ -35,7 +35,7 @@ def _get_decimal(number: int, number_system: int) -> int:
     return decimal_encoding
 
 
-def _get_binary(number: int, number_system: int) -> int:
+def _get_binary(number: int_str, number_system: int) -> int:
     response = []
     cache = [int(number)]
     b = 0
@@ -46,15 +46,12 @@ def _get_binary(number: int, number_system: int) -> int:
         cache.append(process)
         remainder = cache[b - 1] % number_system
         if remainder > 9:
-            response.append([remainder])
+            response.append(remainder)
         else:
             response.append(str(remainder))
 
     response.reverse()
-    if len(response) == 1:
-        response = response[0][0]
-    else:
-        response = ''.join(response)
+    response = ''.join(response)
 
     if str(response).isalnum():
         return response
@@ -89,6 +86,6 @@ def number_encoding(number: int_str = 0, initial: int = 10, final: int = 10) -> 
     elif initial != 10 and final == 10:
         return _get_decimal(number, initial)
     elif initial != 10 and final != 10:
-        return _get_binary(get_decimal(number, initial), final)
+        return _get_binary(_get_decimal(number, initial), final)
     else:
         return _get_binary(number, final)
